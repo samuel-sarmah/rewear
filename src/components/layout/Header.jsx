@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled.header`
     background-color: ${({ theme }) => theme.colors.headerBg};
@@ -9,7 +9,7 @@ const HeaderWrapper = styled.header`
     justify-content: space-between;
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
     font-size: ${({ theme }) => theme.fontSizes.lg};
     font-weight: bold;
     color: ${({ theme }) => theme.colors.text};
@@ -21,7 +21,7 @@ const Nav = styled.nav`
     gap: ${({ theme }) => theme.spacing.lg};
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
     color: ${({ theme }) => theme.colors.text};
     font-size: ${({ theme }) => theme.fontSizes.base};
     text-decoration: none;
@@ -43,7 +43,7 @@ const SearchBar = styled.input`
     }
 `;
 
-const CartButton = styled.button`
+const CartButton = styled(Link)`
     background: none;
     border: none;
     font-size: ${({ theme }) => theme.fontSizes.lg};
@@ -65,15 +65,15 @@ const RightSection = styled.div`
 const Header = () => {
     return (
         <HeaderWrapper>
-            <Logo href="/">♻️ ReWear</Logo>
+            <Logo to="/">♻️ ReWear</Logo>
             <Nav>
-                <NavLink href="/shop">Shop</NavLink>
-                <NavLink href="/sell">Sell</NavLink>
-                <NavLink href="/about">About</NavLink>
+                <NavLink to="/shop">Shop</NavLink>
+                <NavLink to="/sell">Sell</NavLink>
+                <NavLink to="/about">About</NavLink>
             </Nav>
             <RightSection>
                 <SearchBar type="text" placeholder="Search..." />
-                <CartButton>🛒</CartButton>
+                <CartButton to="/cart">🛒</CartButton>
             </RightSection>
         </HeaderWrapper>
     );
