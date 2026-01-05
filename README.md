@@ -1,16 +1,173 @@
-# React + Vite
+# ♻️ ReWear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sustainable fashion marketplace where you can buy and sell pre-loved clothing. Built with React, Vite, and styled-components.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Shop** - Browse pre-loved fashion items with filtering by category and condition
+- **Sell** - List your own items for sale
+- **Product Details** - View detailed information about each item
+- **Shopping Cart** - Add items to your cart (state management coming soon)
+- **Responsive Design** - Works on desktop and mobile devices
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **Vite** - Build tool and dev server
+- **React Router 7** - Client-side routing with `createBrowserRouter`
+- **styled-components** - CSS-in-JS styling
+- **ESLint** - Code linting
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   ├── home/
+│   │   ├── Hero.jsx
+│   │   ├── FeaturedItems.jsx
+│   │   └── CategoryGrid.jsx
+│   ├── layout/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── Layout.jsx
+│   └── products/
+│       └── ProductCard.jsx
+├── data/
+│   └── products.js          # Mock product data
+├── pages/
+│   ├── Home.jsx
+│   ├── Shop.jsx
+│   ├── ProductDetail.jsx
+│   ├── Sell.jsx
+│   ├── About.jsx
+│   ├── Cart.jsx
+│   └── ErrorPage.jsx
+├── styles/
+│   ├── theme.js              # Design tokens
+│   └── GlobalStyles.js       # Global CSS
+├── routes.jsx                # Route configuration
+├── App.jsx
+└── main.jsx                  # Entry point
+```
+
+## 🏃 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd rewear
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run tests (see Testing section) |
+
+## 🧪 Testing
+
+This project uses **Vitest** for unit testing and **React Testing Library** for component testing.
+
+### Setup Testing (if not already installed)
+
+```bash
+npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+```
+
+Add to `vite.config.js`:
+```js
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+  },
+})
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## 🎨 Design System
+
+The app uses a consistent design system defined in `src/styles/theme.js`:
+
+### Colors
+- **Primary**: `#51cf66` (green)
+- **Primary Dark**: `#2f9e44`
+- **Hero Background**: `#d0bfff` (purple)
+- **Card Background**: `#fff9db` (yellow)
+
+### Category Colors
+| Category | Color |
+|----------|-------|
+| Tops | `#a5d8ff` |
+| Bottoms | `#ffc9c9` |
+| Dresses | `#b2f2bb` |
+| Outerwear | `#ffec99` |
+| Shoes | `#eebefa` |
+| Accessories | `#ffd8a8` |
+
+## 📄 Routes
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `/` | Home | Landing page with hero, featured items, categories |
+| `/shop` | Shop | Product grid with filters |
+| `/product/:id` | ProductDetail | Single product view |
+| `/sell` | Sell | Form to list new items |
+| `/about` | About | Company info and mission |
+| `/cart` | Cart | Shopping cart |
+
+## 🔮 Roadmap
+
+- [ ] Add state management (Context API or Zustand)
+- [ ] Implement cart functionality
+- [ ] Add user authentication
+- [ ] Connect to backend API
+- [ ] Add search functionality
+- [ ] Implement checkout flow
+- [ ] Add image upload for selling items
+
+## 📝 License
+
+MIT License
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
