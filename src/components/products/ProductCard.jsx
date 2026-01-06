@@ -32,7 +32,7 @@ const Price = styled.span`
 
 const Condition = styled.span`
     font-size: ${({ theme }) => theme.fontSizes.xs};
-    color: ${({ theme }) => theme.colors.textMutedd};
+    color: ${({ theme }) => theme.colors.textMuted};
     display: block;
     margin-top: ${({ theme }) => theme.spacing.xs};
 `;
