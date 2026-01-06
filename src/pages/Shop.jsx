@@ -26,7 +26,7 @@ const FilterTitle = styled.h3`
 `;
 
 const FilterOption = styled.label`
-    display: flex,
+    display: flex;
     align-items: center;
     gap: ${({ theme }) => theme.spacing.sm};
     font-size: ${({ theme }) => theme.fontSizes.sm};
