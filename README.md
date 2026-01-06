@@ -88,36 +88,93 @@ The app will be available at `http://localhost:5173`
 
 This project uses **Vitest** for unit testing and **React Testing Library** for component testing.
 
-### Setup Testing (if not already installed)
+### Test Structure
 
-```bash
-npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+```
+src/
+├── components/
+│   └── products/
+│       └── ProductCard.test.jsx    # Component tests
+├── data/
+│   └── products.test.js            # Data/utility tests
+├── pages/
+│   ├── Home.test.jsx               # Page tests with routing
+│   └── Sell.test.jsx               # Form & user interaction tests
+└── test/
+    └── setup.js                    # Test setup (jest-dom)
 ```
 
-Add to `vite.config.js`:
-```js
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.js',
-  },
-})
-```
+### Test Types
+
+| Type | File Pattern | Purpose |
+|------|--------------|---------|
+| **Component** | `*.test.jsx` | Test UI components render correctly |
+| **Data** | `*.test.js` | Test data structures and utilities |
+| **Page** | `pages/*.test.jsx` | Test pages with routing context |
+| **Integration** | `*.test.jsx` | Test user interactions |
 
 ### Running Tests
 
 ```bash
-# Run all tests
+# Run all tests once
 npm test
 
-# Run tests in watch mode
+# Run tests in watch mode (re-runs on file changes)
 npm run test:watch
 
-# Run tests with coverage
+# Run tests with coverage report
 npm run test:coverage
 ```
+
+### Writing Tests
+
+**Component Test Example:**
+```jsx
+import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../styles/theme";
+import ProductCard from "./ProductCard";
+
+const renderWithTheme = (component) => {
+    return render(
+        <ThemeProvider theme={theme}>
+            {component}
+        </ThemeProvider>
+    );
+};
+
+describe('ProductCard', () => {
+    it('renders product title', () => {
+        renderWithTheme(<ProductCard product={mockProduct} />);
+        expect(screen.getByText('Vintage Denim Jacket')).toBeInTheDocument();
+    });
+});
+```
+
+**Page Test with Router:**
+```jsx
+import { MemoryRouter } from "react-router-dom";
+
+const renderWithProviders = (component) => {
+    return render(
+        <MemoryRouter>
+            <ThemeProvider theme={theme}>
+                {component}
+            </ThemeProvider>
+        </MemoryRouter>
+    );
+};
+```
+
+### Testing Best Practices
+
+| Practice | Description |
+|----------|-------------|
+| **Wrap with providers** | Components using theme/router need proper providers |
+| **Use `getByRole`** | Prefer role-based queries for accessibility |
+| **Test behavior** | Focus on what users see, not implementation |
+| **Use `userEvent`** | Simulate realistic user interactions |
 
 ## 🎨 Design System
 
