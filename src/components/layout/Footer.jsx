@@ -6,6 +6,13 @@ const FooterWrapper = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        flex-direction: column;
+        gap: ${({ theme }) => theme.spacing.xl};
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 const BrandSection = styled.div`
@@ -28,6 +35,10 @@ const Tagline = styled.span`
 const LinksSection = styled.div`
     display: flex;
     gap: ${({ theme }) => theme.spacing.xxl};
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        gap: ${({ theme }) => theme.spacing.xl};
+    }
 `;
 
 const LinkColumn = styled.div`

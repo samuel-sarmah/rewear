@@ -1,28 +1,36 @@
 export const theme = {
   colors: {
-    // Brand Colors
-    primary: '#51cf66',
-    primaryDark: '#2f9e44',
+    // Brand Colors - vibrant coral/mint for ecommerce energy
+    primary: '#20c997',
+    primaryDark: '#12b886',
+    accent: '#ff6b6b',
+    accentDark: '#fa5252',
 
-    // Background Colors
-    heroBg: '#d0bfff',
-    cardBg: '#fff9db',
-    headerBg: '#e9ecef',
-    footerBg: '#343a40',
+    // Background Colors - cleaner, more modern
+    heroBg: '#f8f9fa',
+    heroAccent: '#e3fafc',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
+    footerBg: '#212529',
+    pageBg: '#f8f9fa',
 
     // Text Colors
-    text: '#1e1e1e',
-    textMuted: '#868e96',
+    text: '#212529',
+    textMuted: '#6c757d',
     textLight: '#adb5bd',
     textInverse: '#ffffff',
 
-    // Category Colors
-    catTops: '#a5d8ff',
-    catBottoms: '#ffc9c9',
-    catDresses: '#b2f2bb',
-    catOuterwear: '#ffec99',
-    catShoes: '#eebefa',
-    catAccessories: '#ffd8a8',
+    // Category Colors - brighter, more playful
+    catTops: '#74c0fc',
+    catBottoms: '#ffa8a8',
+    catDresses: '#8ce99a',
+    catOuterwear: '#ffd43b',
+    catShoes: '#e599f7',
+    catAccessories: '#ffc078',
+    
+    // UI Colors
+    border: '#dee2e6',
+    shadow: 'rgba(0, 0, 0, 0.1)',
   },
 
   spacing: {

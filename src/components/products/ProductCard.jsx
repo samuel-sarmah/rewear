@@ -4,12 +4,20 @@ const Card = styled.div`
     background-color: ${({ theme }) => theme.colors.cardBg};
     border-radius: ${({ theme }) => theme.radius.md};
     padding: ${({ theme }) => theme.spacing.md};
-    border: 1px solid ${({ theme }) => theme.colors.text};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    box-shadow: 0 2px 8px ${({ theme }) => theme.colors.shadow};
     width: 180px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px ${({ theme }) => theme.colors.shadow};
+    }
 `;
 
 const ImagePlaceholder = styled.div`
-    background-color: ${({ theme }) => theme.colors.headerBg};
+    background-color: ${({ theme }) => theme.colors.pageBg};
+    border-radius: ${({ theme }) => theme.radius.sm};
     height: 120px;
     display: flex;
     align-items: center;
@@ -26,7 +34,7 @@ const Title = styled.h3`
 
 const Price = styled.span`
     font-size: ${({ theme }) => theme.fontSizes.lg};
-    color: ${({ theme }) => theme.colors.primaryDark};
+    color: ${({ theme }) => theme.colors.accent};
     font-weight: bold;
 `;
 
