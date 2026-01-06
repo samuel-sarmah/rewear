@@ -73,19 +73,20 @@ const Sell = () => {
 
     return (
         <PageWrapper>
-            <Title>💰 Sell Your Items</Title>
+            <Title>Sell Your Items</Title>
             <Subtitle>Give Your Clothes a second life and earn some cash</Subtitle>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label>Item Title</Label>
-                    <input 
+                    <Label htmlFor="item-title">Item Title</Label>
+                    <Input 
+                        id="item-title"
                         type="text" 
                         placeholder="e.g., Vintage Denim Jacket" 
                         required />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Category</Label>
-                    <Select required>
+                    <Label htmlFor="category">Category</Label>
+                    <Select id="category" required>
                         <option value="">Select a category</option>
                         <option value="tops">Tops</option>
                         <option value="bottoms">Bottoms</option>
@@ -96,8 +97,8 @@ const Sell = () => {
                     </Select>
                 </FormGroup>
                 <FormGroup>
-                    <Label>Condition</Label>
-                    <Select required>
+                    <Label htmlFor="condition">Condition</Label>
+                    <Select id="condition" required>
                         <option value="">Select condition</option>
                         <option value="like-new">Like New</option>
                         <option value="excellent">Excellent</option>
@@ -106,12 +107,12 @@ const Sell = () => {
                     </Select>
                 </FormGroup>
                 <FormGroup>
-                    <Label>Price ($)</Label>
-                    <input type="number" min="1" placeholder="25" required />
+                    <Label htmlFor="price">Price ($)</Label>
+                    <Input id="price" type="number" min="1" placeholder="25" required />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Description</Label>
-                    <TextArea placeholder="Describe your item ..." required />
+                    <Label htmlFor="description">Description</Label>
+                    <TextArea id="description" placeholder="Describe your item ..." required />
                 </FormGroup>
                 <SubmitButton type="submit">List Item for Sale</SubmitButton>
             </Form>
