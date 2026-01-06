@@ -18,7 +18,7 @@ A sustainable fashion marketplace where you can buy and sell pre-loved clothing.
 - **styled-components** - CSS-in-JS styling
 - **ESLint** - Code linting
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -62,7 +62,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:samuel-sarmah/rewear.git
 cd rewear
 
 # Install dependencies
