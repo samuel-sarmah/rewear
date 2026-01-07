@@ -5,10 +5,11 @@ export const products = [
         title: 'Vintage Denim Jacket',
         price: 35,
         condition: 'Excellent',
-        category: 'Outwear',
+        category: 'outerwear',
         size: 'M',
         description: 'Classic 90s denim jacket in great condition. Minor fading gives it authentic vintage character.',
-        seller: 'EcoFashionista'
+        seller: 'EcoFashionista',
+        featured: true
     },
     {
         id: 2,
@@ -52,7 +53,8 @@ export const products = [
         category: 'tops',
         size: 'L',
         description: 'Crisp cotton oxford shirt with subtle blue stripes. Perfect for work or casual.',
-        seller: 'EcoFashionista'
+        seller: 'EcoFashionista',
+        featured: true
     },
     {
         id: 6,
@@ -96,7 +98,8 @@ export const products = [
         category: 'dresses',
         size: 'M',
         description: 'Essential LBD for any wardrobe. Flattering fit, knee length.',
-        seller: 'GreenCloset'
+        seller: 'GreenCloset',
+        featured: true
     },
     {
         id: 10,
@@ -129,7 +132,8 @@ export const products = [
         category: 'bottoms',
         size: '32',
         description: 'Brown corduroy pants in excellent condition. Barely worn.',
-        seller: 'EcoFashionista'
+        seller: 'EcoFashionista',
+        featured: true
     }
 ];
 

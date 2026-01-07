@@ -18,18 +18,30 @@ const renderWithProviders = (component) => {
 }
 
 describe('Home Page', () => {
-    it('renders hero section', () => {
+    it('renders announcement bar', () => {
         renderWithProviders(<Home />);
-        expect(screen.getByText(/Give Clothes a second Life/i)).toBeInTheDocument();
+        expect(screen.getByText(/Join 10,000\+ shoppers/i)).toBeInTheDocument();
     });
 
-    it('renders featured items section', () => {
+    it('renders shop now section', () => {
         renderWithProviders(<Home />);
-        expect(screen.getByText('Featured Items')).toBeInTheDocument();
+        expect(screen.getByText('Shop Now')).toBeInTheDocument();
     });
 
-    it('renders category section', () => {
+    it('renders category pills', () => {
         renderWithProviders(<Home />);
-        expect(screen.getByText('Shop by Category')).toBeInTheDocument();
+        expect(screen.getByText('All')).toBeInTheDocument();
+        expect(screen.getByText(/Tops/i)).toBeInTheDocument();
+    });
+
+    it('renders product tabs', () => {
+        renderWithProviders(<Home />);
+        expect(screen.getByText('Just Dropped')).toBeInTheDocument();
+        expect(screen.getByText('Under $25')).toBeInTheDocument();
+    });
+
+    it('renders sell banner', () => {
+        renderWithProviders(<Home />);
+        expect(screen.getByText(/Have clothes you no longer wear/i)).toBeInTheDocument();
     });
 });

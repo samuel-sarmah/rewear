@@ -22,7 +22,7 @@ const routes = [
                 element: <Shop />,
             },
             {
-                path: "product/:id",
+                path: "products/:id",
                 element: <ProductDetail />,
             },
             {
